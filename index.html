@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>
+		TurkeyTravels
+	</title>
+</head>
+<body>
+	<div id="hero">
+		<div class="navbar">
+			<img src="Radiance_img/logo.png" class="logo">
+			<div class="user">
+				<button type="button">
+					Explore
+				</button>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="info">
+				<h1>
+					DISCOVER
+				</h1>
+				<p>
+					Lorem ipsum delor sit amet, consectrtur adipiscing elit. Praesent vestibulum nulla<br> id eros rhoncus, at viverra velit tempor.
+				</p>
+				<input type="text" placeholder="Search">
+			</div>
+		</div>
+
+		<div class="slider">
+			<img src="Radiance_img/left-arrow.png" id="prev">
+			<div class="preview">
+				<img src="Radiance_img/small1.png" class="active thumbnail">
+				<img src="Radiance_img/small2.png" class="thumbnail">
+				<img src="Radiance_img/small3.png" class="thumbnail">
+				<img src="Radiance_img/small4.png" class="thumbnail">
+				<img src="Radiance_img/small5.png" class="thumbnail">
+			</div>
+			<img src="Radiance_img/right-arrow.png" id="next">
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		var prev = document.getElementById("prev");
+		var next = document.getElementById("next");
+		var thumbnail = document.getElementById("thumbnail");
+		var hero = document.getElementById("hero");
+
+		var backgroundImg = new Array(
+			"Radiance_img/bg1.png",
+			"Radiance_img/bg2.png",
+			"Radiance_img/bg3.png",
+			"Radiance_img/bg4.png",
+			"Radiance_img/bg5.png",
+			);
+
+		let i = 0;
+		next.onclick = function() {
+			if(i < 4){
+				hero.style.backgroundImage = 'url("'+backgroundImg[i+1]+'")';
+
+				i++;
+			}
+		}
+
+		prev.onclick = function() {
+			if(i > 0){
+				hero.style.backgroundImage = 'url("'+backgroundImg[i-1]+'")';
+
+				i--;
+			}
+		}
+
+	</script>
+
+			<!--
+				thumbnail[i+1].classList.add("active");
+				thumbnail[i].classList.remove("active");
+
+				thumbnail[i-1].classList.add("active");
+				thumbnail[i].classList.remove("active");
+			-->
+
+</body>
+</html>
